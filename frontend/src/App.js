@@ -15,17 +15,20 @@ const AppWrapper = styled(Box)({
 const MainContent = styled(Box)({
   flex: 1,
 });
-import ArchiPage from "./pages/Home/ArchiPage";
 
 function App() {
   return (
     <Router>
-      <div className="App">
-        <Routes>
-          <Route path="/" element={<HomePage />} />
-          {/* Ajoutez d'autres routes ici selon vos besoins */}
-        </Routes>
-      </div>
+      <AppWrapper>
+        <Header />
+        <MainContent>
+          <Routes>
+            <Route path="/" element={<HomePage />} />
+            <Route path="/archimonstres" element={<ArchiPage />} />
+          </Routes>
+        </MainContent>
+        <Footer />
+      </AppWrapper>
     </Router>
   );
 }

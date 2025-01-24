@@ -63,21 +63,20 @@ const ArchiPage = () => {
       </header>
 
       {error && <p>Erreur: {error}</p>}
-
-      <div className="monstres-grid">
-        {monstres.map((monstre) => (
-          <div key={monstre.id} className="monstre-card">
-            <img src={monstre.image_url} alt={monstre.nom} />
-            <h2>{monstre.nom}</h2>
-            <div className="monstre-quantity">
-              <button onClick={() => updateQuantity(monstre.id, "decrement")}>-</button>
-              <span>{monstre.quantite}</span>
-              <button onClick={() => updateQuantity(monstre.id, "increment")}>+</button>
+        <div className="monstres-grid">
+          {monstres.map((monstre) => (
+            <div key={monstre.id} className="monstre-card">
+              <img src={monstre.image_url} alt={monstre.nom} />
+              <h2>{monstre.nom}</h2>
+              <div className="monstre-quantity">
+                <button onClick={() => updateQuantity(monstre.id, "decrement")}>-</button>
+                <span>{monstre.quantite}</span>
+                <button onClick={() => updateQuantity(monstre.id, "increment")}>+</button>
+              </div>
             </div>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
-    </div>
   );
 };
 
