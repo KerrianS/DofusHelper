@@ -1,0 +1,22 @@
+version: 2.1
+
+jobs:
+  build-and-deploy:
+    machine:
+     image: circleci/node:23
+
+    steps:
+      - checkout
+      - run:
+          name: Installer les dépendances
+          command: npm install
+
+      - run:
+          name: Exécuter les tests
+          command: npm test
+
+workflows:
+  version: 2.1
+  say-hello-workflow:
+    jobs:
+      - build-and-deploy

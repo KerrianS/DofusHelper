@@ -8,7 +8,8 @@
     "dev": "concurrently \"npm run server\" \"npm run client\"",
     "server": "cd backend && node server.js",
     "client": "cd frontend && npm start",
-    "install-all": "npm install && cd backend && npm install && cd ../frontend && npm install"
+    "install-all": "npm install && cd backend && npm install && cd ../frontend && npm install",
+    "test": "mocha"
   },
   "keywords": [],
   "author": "",
@@ -20,5 +21,10 @@
     "express": "^4.21.2",
     "node-fetch": "^3.3.2",
     "react-router-dom": "^7.1.3"
+  },
+  "devDependencies": {
+    "chai": "^5.1.2",
+    "mocha": "^11.1.0",
+    "supertest": "^7.0.0"
   }
 }
