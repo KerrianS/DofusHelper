@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import '../../assets/css/ArchiPage.css';
 
 const ArchiPage = () => {
   const [monstres, setMonstres] = useState([]);
@@ -48,51 +49,34 @@ const ArchiPage = () => {
 
   return (
     <div>
-      <h1>Liste des Monstres</h1>
+      {/* Header avec barre de recherche fixe */}
+      <header className="search-header">
+        <div className="search-container">
+          <input
+            type="text"
+            placeholder="Rechercher un monstre..."
+            value={search}
+            onChange={(e) => setSearch(e.target.value)}
+          />
+          <button onClick={handleSearch}>Rechercher</button>
+        </div>
+      </header>
 
-      <div style={{ marginBottom: "20px" }}>
-        <input
-          type="text"
-          placeholder="Rechercher un monstre..."
-          value={search}
-          onChange={(e) => setSearch(e.target.value)}
-          style={{ padding: "10px", width: "300px", marginRight: "10px" }}
-        />
-        <button onClick={handleSearch} style={{ padding: "10px 20px", cursor: "pointer" }}>
-          Rechercher
-        </button>
-      </div>
-
-      {loading && <p>Chargement...</p>}
       {error && <p>Erreur: {error}</p>}
 
-      <ul style={{ listStyle: "none", padding: 0 }}>
+      <div className="monstres-grid">
         {monstres.map((monstre) => (
-          <li key={monstre.id} style={{ marginBottom: "20px" }}>
+          <div key={monstre.id} className="monstre-card">
+            <img src={monstre.image_url} alt={monstre.nom} />
             <h2>{monstre.nom}</h2>
-            <img 
-              src={monstre.image_url} 
-              alt={monstre.nom} 
-              style={{ width: "150px", height: "150px", objectFit: "cover" }} 
-            />
-            <p>
-              Quantité: {monstre.quantite}
-              <button
-                onClick={() => updateQuantity(monstre.id, "decrement")}
-                style={{ marginLeft: "10px", padding: "5px 10px", cursor: "pointer" }}
-              >
-                -
-              </button>
-              <button
-                onClick={() => updateQuantity(monstre.id, "increment")}
-                style={{ marginLeft: "5px", padding: "5px 10px", cursor: "pointer" }}
-              >
-                +
-              </button>
-            </p>
-          </li>
+            <div className="monstre-quantity">
+              <button onClick={() => updateQuantity(monstre.id, "decrement")}>-</button>
+              <span>{monstre.quantite}</span>
+              <button onClick={() => updateQuantity(monstre.id, "increment")}>+</button>
+            </div>
+          </div>
         ))}
-      </ul>
+      </div>
     </div>
   );
 };
