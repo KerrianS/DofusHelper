@@ -49,15 +49,13 @@ const CraftList = () => {
                 .map(monster => ({
                   name: monster.name.fr,
                   img: monster.img,
-                  subareas: monster.subareas
                 })),
               achievements: achievementsResponse.data.data.map(achievement => ({
                 name: achievement.name.fr,
                 img: achievement.img
               })),
               quests: questsResponse.data.data.map(quest => ({
-                name: quest.name.fr,
-                img: quest.img
+                name: quest.name.fr
               }))
             };
           }
@@ -85,8 +83,8 @@ const CraftList = () => {
       <table>
         <thead>
           <tr>
-            <th>Name</th>
             <th>Image</th>
+            <th>Name</th>
             <th>Quantity</th>
             <th>Monsters</th>
             <th>Achievements</th>
@@ -96,35 +94,31 @@ const CraftList = () => {
         <tbody>
           {items.map((item, index) => (
             <tr key={index}>
-              <td>{item.name}</td>
               <td><img src={item.img} alt={item.name} width="50" /></td>
+              <td>{item.name}</td>
               <td>{item.quantity}</td>
               <td>
-                <ul>
-                  {item.monsters.map((monster, idx) => (
-                    <li key={idx}>
-                      <img src={monster.img} alt={monster.name} width="30" /> {monster.name} ({monster.subareas.join(', ')})
-                    </li>
-                  ))}
-                </ul>
+                {item.monsters.map((monster, idx) => (
+                  <div key={idx} className="tooltip">
+                    <img src={monster.img} alt={monster.name} width="30" />
+                    <span className="tooltiptext">{monster.name}</span>
+                  </div>
+                ))}
               </td>
               <td>
-                <ul>
-                  {item.achievements.map((achievement, idx) => (
-                    <li key={idx}>
-                      <img src={achievement.img} alt={achievement.name} width="30" /> {achievement.name}
-                    </li>
-                  ))}
-                </ul>
+                {item.achievements.map((achievement, idx) => (
+                  <div key={idx} className="tooltip">
+                    <img src={achievement.img} alt={achievement.name} width="30" />
+                    <span className="tooltiptext">{achievement.name}</span>
+                  </div>
+                ))}
               </td>
               <td>
-                <ul>
-                  {item.quests.map((quest, idx) => (
-                    <li key={idx}>
-                      <img src={quest.img} alt={quest.name} width="30" /> {quest.name}
-                    </li>
-                  ))}
-                </ul>
+                {item.quests.map((quest, idx) => (
+                  <div key={idx}>
+                    {quest.name}
+                  </div>
+                ))}
               </td>
             </tr>
           ))}
