@@ -20,7 +20,14 @@ app.get("/api/monstres", async (req, res) => {
     const response = await axios.get(apiUrl, {
       headers: {
         "HTTP-X-APIKEY": process.env.API_KEY,
+        "HTTP-X-USERKEY": process.env.USER_KEY,
+        "Content-Type": "application/json",
+        "Accept": "application/json"
       },
+      timeout: 10000, 
+      httpsAgent: new (require('https').Agent)({  
+        rejectUnauthorized: false 
+      })
     });
 
     if (!response.data) {
@@ -29,10 +36,18 @@ app.get("/api/monstres", async (req, res) => {
 
     res.json(response.data);
   } catch (error) {
-    console.error("Erreur API:", error);
+    // Log plus détaillé de l'erreur
+    console.error("Erreur API détaillée:", {
+      message: error.message,
+      response: error.response?.data,
+      status: error.response?.status,
+      headers: error.response?.headers
+    });
+    
     res.status(500).json({ 
       error: "Erreur lors de la récupération des données", 
-      details: error.message 
+      details: error.message,
+      apiResponse: error.response?.data
     });
   }
 });
