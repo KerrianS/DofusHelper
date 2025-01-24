@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import HomePage from './pages/Home/HomePage';
 import Header from './components/Header/HeaderComponent';
 import Footer from './components/Footer/FooterComponent';
+import CraftList from './pages/Home/CraftList';
 import { Box, styled } from '@mui/material';
 
 const AppWrapper = styled(Box)({
@@ -22,9 +23,8 @@ function App() {
         <Header />
         <MainContent>
           <Routes>
-
             <Route path="/" element={<HomePage />} />
-
+            <Route path="/craft" element={<CraftList />} />
           </Routes>
         </MainContent>
         <Footer />
