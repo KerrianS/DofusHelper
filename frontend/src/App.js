@@ -4,7 +4,7 @@ import HomePage from './pages/Home/HomePage';
 import Header from './components/Header/HeaderComponent';
 import Footer from './components/Footer/FooterComponent';
 import { Box, styled } from '@mui/material';
-import ArchiPage from "./pages/Home/ArchiPage";
+import ArchiPage from "./pages/Archi/ArchiPage";
 
 const AppWrapper = styled(Box)({
   display: 'flex',

@@ -15,11 +15,17 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    background-color: white;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin: 20px auto;
+    max-width: 800px;
   }
   
   .search-container input {
     padding: 12px;
-    width: 400px;
+    width: 600px;
     border: 2px solid #000000;
     border-radius: 25px;
     outline: none;
@@ -48,7 +54,6 @@
   /* Ajout de l'espacement pour ne pas que le contenu soit masqué par le header */
   body {
     margin: 0;
-    padding-top: 80px; /* Ajuster cette valeur en fonction de la hauteur du header */
   }
   
   /* Grille des monstres */
@@ -58,24 +63,29 @@
     gap: 50px;
     justify-content: center;
     margin-top: 20px;
+    margin-bottom: 50px;
   }
   
   /* Carte de monstre */
   .monstre-card {
     width: 250px;
-    height: 250px;
+    min-height: 250px;
     background: #fff;
     border-radius: 15px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     padding: 20px;
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
   }
   
   .monstre-card img {
     width: 100%;
-    height: 120px;
-    object-fit: cover;
+    height: 180px;
+    object-fit: contain;
     border-radius: 10px;
+    margin-bottom: 10px;
   }
   
   .monstre-quantity {
@@ -90,11 +100,16 @@
     background-color: #484848;
     border: none;
     color: white;
-    font-size: 18px;
-    padding: 8px 15px;
+    font-size: 14px;
+    width: 25px;
+    height: 25px;
     border-radius: 50%;
     margin: 0 10px;
     cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
   }
   
   .monstre-quantity button:hover {
@@ -119,4 +134,10 @@
       grid-template-columns: repeat(1, 250px);
     }
   }
+  
+.monstre-card h2 {
+  font-size: 1.1rem;
+  margin: 10px 0;
+  word-wrap: break-word; /* Pour gérer les noms très longs */
+}
   

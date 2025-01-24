@@ -5,8 +5,6 @@ require('dotenv').config();
 
 const app = express();
 
-
-
 app.use(cors());
 app.use(express.json());
 
@@ -16,7 +14,7 @@ app.get("/api/monstres", async (req, res) => {
 
     let apiUrl = "https://api.metamob.fr/utilisateurs/Yoannrht/monstres";
     if (nom) {
-      apiUrl += `?nom=${encodeURIComponent(nom)}`;
+      apiUrl += `?nom=%${encodeURIComponent(nom)}%`;
     }
 
     const response = await axios.get(apiUrl, {
@@ -25,9 +23,17 @@ app.get("/api/monstres", async (req, res) => {
       },
     });
 
+    if (!response.data) {
+      throw new Error("Aucune donnée reçue de l'API");
+    }
+
     res.json(response.data);
   } catch (error) {
-    res.status(500).json({ error: error.message });
+    console.error("Erreur API:", error);
+    res.status(500).json({ 
+      error: "Erreur lors de la récupération des données", 
+      details: error.message 
+    });
   }
 });
 

@@ -73,12 +73,6 @@ function Header() {
                     <NavLink onClick={() => navigate('/craft')}>Craft</NavLink>
                     <NavLink onClick={() => navigate('/resources')}>Ressources</NavLink>
                     <NavLink onClick={() => navigate('/archimonstres')}>Archimonstres</NavLink>
-                    <IconButton 
-                        onClick={toggleDarkMode} 
-                        sx={{ color: 'white', ml: 1 }}
-                    >
-                        {darkMode ? <LightModeRoundedIcon /> : <DarkModeRoundedIcon />}
-                    </IconButton>
                 </Box>
             </Toolbar>
         </StyledAppBar>
