@@ -71,7 +71,6 @@ function Header() {
                 <Box sx={{ flexGrow: 1 }} />
                 <Box sx={{ display: 'flex', gap: 2, alignItems: 'center' }}>
                     <NavLink onClick={() => navigate('/craft')}>Craft</NavLink>
-                    <NavLink onClick={() => navigate('/resources')}>Ressources</NavLink>
                     <NavLink onClick={() => navigate('/archimonstres')}>Archimonstres</NavLink>
                 </Box>
             </Toolbar>

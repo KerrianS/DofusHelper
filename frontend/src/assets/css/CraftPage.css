@@ -1,0 +1,105 @@
+/* Fichier: CraftList.css */
+
+/* Style de base pour la table */
+table {
+    width: 100%; /* Prend toute la largeur disponible */
+    border-collapse: collapse;
+    margin-top: 20px;
+  }
+  
+  th, td {
+    border: 1px solid #ddd;
+    text-align: center;
+    padding: 10px;
+    width: 16.66%; /* Chaque colonne occupe une part égale (100% ÷ 6 colonnes) */
+    word-wrap: break-word; /* Permet de couper les mots si le texte dépasse */
+  }
+  
+  th {
+    background-color: #f4f4f4;
+    font-weight: bold;
+  }
+  
+  tr:nth-child(even) {
+    background-color: #f9f9f9;
+  }
+  
+  tr:hover {
+    background-color: #f1f1f1;
+  }
+  
+  /* Style pour les images */
+  .craft-table img {
+    border-radius: 5px;
+    max-width: 50px;
+    height: auto;
+  }
+  
+  /* Tooltip */
+  .craft-tooltip {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .craft-tooltip img {
+    border-radius: 4px;
+    transition: transform 0.2s;
+  }
+  
+  .craft-tooltip:hover img {
+    transform: scale(1.1);
+  }
+  
+  .craft-tooltip .tooltiptext {
+    visibility: hidden;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    text-align: center;
+    padding: 5px 10px;
+    border-radius: 4px;
+    position: absolute;
+    z-index: 1;
+    bottom: 125%;
+    left: 50%;
+    transform: translateX(-50%);
+    white-space: nowrap;
+    font-size: 14px;
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
+  
+  .craft-tooltip:hover .tooltiptext {
+    visibility: visible;
+    opacity: 1;
+  }
+  
+  /* Ajustement des cellules vides pour qu'elles remplissent l'espace */
+  td:empty::before {
+    content: "\00a0"; /* Insère un espace insécable pour remplir les cellules vides */
+  }
+  
+  .MuiTableCell-root {
+    vertical-align: top !important;
+  }
+  
+  .craft-table {
+    background-color: white;
+  }
+  
+  .craft-table .MuiTableCell-root {
+    padding: 16px;
+    vertical-align: middle;
+  }
+  
+  .craft-table img {
+    border-radius: 5px;
+    max-width: 50px;
+    height: auto;
+    display: inline-block;
+  }
+  
+  .craft-tooltip {
+    display: inline-flex;
+    justify-content: center;
+  }
+  
