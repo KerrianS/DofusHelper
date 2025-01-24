@@ -1,6 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import HomePage from './pages/Home/HomePage';
+import CraftList from './pages/Home/CraftList';
 
 function App() {
   return (
@@ -8,7 +9,7 @@ function App() {
       <div className="App">
         <Routes>
           <Route path="/" element={<HomePage />} />
-          {/* Ajoutez d'autres routes ici selon vos besoins */}
+          <Route path="/craft" element={<CraftList />} />
         </Routes>
       </div>
     </Router>
