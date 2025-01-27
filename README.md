@@ -32,14 +32,6 @@ cd dofushelper
 npm run install-all
 ```
 
-3. Configure environment:
-Create a `.env` file in the `backend` directory:
-```env
-PORT=5000
-API_KEY=your_metamob_api_key
-USER_KEY=your_metamob_user_key
-```
-
 ## How to Test
 
 ### Frontend Tests
@@ -126,11 +118,3 @@ dofushelper/
 3. Committez vos changements (`git commit -m 'Add some AmazingFeature'`)
 4. Push vers la branche (`git push origin feature/AmazingFeature`)
 5. Ouvrez une Pull Request
-
-## License
-
-ISC
-
-## Contact
-
-Créé et maintenu par [Votre Nom]
