@@ -1,9 +1,13 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import HomePage from './pages/Home/HomePage';
+import { Box, styled } from '@mui/material';
+
 import Header from './components/Header/HeaderComponent';
 import Footer from './components/Footer/FooterComponent';
-import { Box, styled } from '@mui/material';
+
+import HomePage from './pages/Home/HomePage';
+import ArchiPage from "./pages/Archi/ArchiPage";
+import CraftPage from './pages/Craft/CraftPage';
 
 const AppWrapper = styled(Box)({
   display: 'flex',
@@ -22,9 +26,9 @@ function App() {
         <Header />
         <MainContent>
           <Routes>
-
             <Route path="/" element={<HomePage />} />
-
+            <Route path="/archimonstres" element={<ArchiPage />} />  
+            <Route path="/craft" element={<CraftPage />} />
           </Routes>
         </MainContent>
         <Footer />

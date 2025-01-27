@@ -1,10 +1,11 @@
 const express = require('express');
 const cors = require('cors');
-require('dotenv').config();
+const monstreRoutes = require('./routes/archimonstreRoutes');
+const craftRoutes = require('./routes/craftRoutes');
+const config = require('./config/config');
 
 const app = express();
 
-// Middleware
 app.use(cors());
 app.use(express.json());
 
@@ -12,6 +13,9 @@ app.use(express.json());
 const resourcesRouter = require('./routes/resourcesAPI');
 
 // Routes
+app.use('/api/monstres', monstreRoutes);
+app.use('/api/craft', craftRoutes);
+
 app.get('/', (req, res) => {
   res.json({ message: 'Bienvenue sur l\'API DofusHelper' });
 });
