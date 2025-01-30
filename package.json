@@ -9,8 +9,8 @@
     "server": "cd backend && node server.js",
     "client": "cd frontend && npm start",
     "install-all": "npm install && cd backend && npm install && cd ../frontend && npm install",
-    "test": "cd frontend && npm test",
-    "test:ci": "cd frontend && CI=true npm test"
+    "test": "concurrently \"cd backend && npm test\" \"cd frontend && npm test -- --watchAll=false\"",
+    "test:ci": "concurrently \"cd backend && CI=true npm test\" \"cd frontend && CI=true npm test\""
   },
   "keywords": [],
   "author": "",

@@ -134,3 +134,16 @@ ISC
 ## Contact
 
 Créé et maintenu par [Votre Nom]
+
+## CI/CD Status
+![CI](https://github.com/[your-username]/dofushelper/workflows/CI/badge.svg)
+![Release](https://github.com/[your-username]/dofushelper/workflows/Release/badge.svg)
+
+## Release Process
+1. Create and push your changes to a feature branch
+2. Create a Pull Request to main
+3. Once tests pass and PR is approved, merge to main
+4. To create a release:
+   - Go to GitHub Releases
+   - Create a new release with semantic versioning (e.g. v1.0.0)
+   - The CI will automatically build and push a tagged Docker image
