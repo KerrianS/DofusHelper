@@ -25,6 +25,11 @@ DofusHelper is a web application designed to enhance the Dofus gaming experience
 ```bash
 git clone [repository-url]
 cd dofushelper
+
+docker run -p 5000:5000 -p 3000:3000 \
+-e API_KEY=check_discord_pseudo_Jay \
+-e USER_KEY=check_discord_pseudo_Jay \
+nythix/dofushelper:latest
 ```
 
 2. Install dependencies:
