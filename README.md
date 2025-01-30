@@ -32,14 +32,6 @@ cd dofushelper
 npm run install-all
 ```
 
-3. Configure environment:
-Create a `.env` file in the `backend` directory:
-```env
-PORT=5000
-API_KEY=your_metamob_api_key
-USER_KEY=your_metamob_user_key
-```
-
 ## How to Test
 
 ### Frontend Tests
@@ -126,24 +118,3 @@ dofushelper/
 3. Committez vos changements (`git commit -m 'Add some AmazingFeature'`)
 4. Push vers la branche (`git push origin feature/AmazingFeature`)
 5. Ouvrez une Pull Request
-
-## License
-
-ISC
-
-## Contact
-
-Créé et maintenu par [Votre Nom]
-
-## CI/CD Status
-![CI](https://github.com/[your-username]/dofushelper/workflows/CI/badge.svg)
-![Release](https://github.com/[your-username]/dofushelper/workflows/Release/badge.svg)
-
-## Release Process
-1. Create and push your changes to a feature branch
-2. Create a Pull Request to main
-3. Once tests pass and PR is approved, merge to main
-4. To create a release:
-   - Go to GitHub Releases
-   - Create a new release with semantic versioning (e.g. v1.0.0)
-   - The CI will automatically build and push a tagged Docker image
