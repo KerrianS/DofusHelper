@@ -1,5 +1,7 @@
 # DofusHelper
 
+Project of IMT Mines Alès, we got 19/20 
+
 ## What is it?
 DofusHelper is a web application designed to enhance the Dofus gaming experience by providing tools for crafting management and Archmonster tracking.
 
